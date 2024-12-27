@@ -52,7 +52,7 @@ export default function QuoteGenerator() {
         </Select>
         {quote && (
           <div className="mt-4 space-y-2">
-            <p className="text-sm italic">"{quote.quote}"</p>
+           <p className="text-sm italic">{"\"" + quote.quote + "\""}</p>
             <p className="text-sm font-semibold">- {quote.author}</p>
           </div>
         )}
