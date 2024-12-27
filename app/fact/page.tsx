@@ -4,7 +4,7 @@ import FactGenerator from '@/components/FactGenerator'
 import Footer from '@/components/Footer'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
-import { Home as HomeIcon, Quote, ArrowLeft } from 'lucide-react'
+import { Home as HomeIcon, Quote } from 'lucide-react'
 
 
 export default function Home() {

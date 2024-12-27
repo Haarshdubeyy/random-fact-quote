@@ -2,8 +2,8 @@
 
 import { useState } from 'react'
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { Card, CardContent, CardFooter } from "@/components/ui/card"
+import { Select } from "@/components/ui/select"
 import { generateFact } from '@/app/actions'
 import { Loader2 } from 'lucide-react'
 
@@ -15,7 +15,7 @@ export default function FactGenerator() {
   const handleGenerateFact = async () => {
     setIsLoading(true)
     try {
-      const newFact = await generateFact(category)
+      const newFact = await generateFact()
       setFact(newFact)
     } finally {
       setIsLoading(false)
