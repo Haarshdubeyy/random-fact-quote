@@ -9,7 +9,7 @@ import { Home as HomeIcon, Quote } from 'lucide-react'
 export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-100 to-gray-200 flex flex-col">
-      {/* Navigation Bar */}
+
       <nav className="p-4 bg-white">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <Button variant="ghost" className="hover:bg-gray-300 border-2 border-black">
@@ -34,9 +34,9 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Main Content */}
+
       <main className="flex min-h-[calc(100vh-4rem)] flex-col items-center">
-        {/* Centered Main Content */}
+
         <div className="flex-1 flex flex-col items-center justify-center p-8 md:p-24">
           <h1 className="text-4xl md:text-5xl font-bold mb-8 text-center">
             Random Quote <span className="text-blue-600">Generator</span>

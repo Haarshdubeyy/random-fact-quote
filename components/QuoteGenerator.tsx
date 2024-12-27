@@ -47,7 +47,7 @@ export default function QuoteGenerator() {
             <SelectItem value="happiness">Happiness</SelectItem>
             <SelectItem value="success">Success</SelectItem>
             <SelectItem value="love">Love</SelectItem>
-            {/* <SelectItem value="wisdom">Wisdom</SelectItem> */}
+
           </SelectContent>
         </Select>
         {quote && (
@@ -75,61 +75,3 @@ export default function QuoteGenerator() {
     </Card>
   )
 }
-
-// 'use client'
-
-// import { useState } from 'react'
-// import { Button } from "@/components/ui/button"
-// import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-// import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-// import { generateQuote } from '@/app/actions'
-// import { Loader2 } from 'lucide-react'
-
-// export default function QuoteGenerator() {
-//   const [quote, setQuote] = useState<{ quote: string; author: string } | null>(null)
-//   const [category, setCategory] = useState<string>('happiness')
-//   const [isLoading, setIsLoading] = useState(false)
-
-//   const handleGenerateQuote = async () => {
-//     setIsLoading(true)
-//     try {
-//       const newQuote = await generateQuote(category)
-//       setQuote(newQuote)
-//     } finally {
-//       setIsLoading(false)
-//     }
-//   }
-
-//   return (
-//     <Card className="w-full max-w-md mx-auto">
-//       <CardHeader>
-//         <CardTitle>Quote Generator</CardTitle>
-//       </CardHeader>
-//       <CardContent>
-//         {quote ? (
-//           <div className="text-center">
-//             <p className="text-xl font-semibold">&ldquo;{quote.quote}&rdquo;</p>
-//             <p className="mt-2 text-gray-600">&mdash; {quote.author}</p>
-//           </div>
-//         ) : (
-//           <p className="text-center text-gray-500">Generate a quote to see it here.</p>
-//         )}
-//       </CardContent>
-//       <CardFooter className="flex flex-col items-center gap-4">
-//         <Select onValueChange={setCategory} value={category}>
-//           <SelectTrigger className="w-full">
-//             <SelectValue placeholder="Select a category" />
-//           </SelectTrigger>
-//           <SelectContent>
-//             <SelectItem value="happiness">Happiness</SelectItem>
-//             <SelectItem value="inspiration">Inspiration</SelectItem>
-//             <SelectItem value="life">Life</SelectItem>
-//           </SelectContent>
-//         </Select>
-//         <Button onClick={handleGenerateQuote} disabled={isLoading}>
-//           {isLoading ? <Loader2 className="animate-spin" /> : 'Generate Quote'}
-//         </Button>
-//       </CardFooter>
-//     </Card>
-//   )
-// }

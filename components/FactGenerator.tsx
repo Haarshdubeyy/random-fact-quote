@@ -32,19 +32,8 @@ export default function FactGenerator() {
 
   return (
     <Card className="w-[350px]">
-      {/* <CardHeader>
-        <CardTitle>Select a Category</CardTitle>
-      </CardHeader> */}
       <CardContent>
         <Select onValueChange={setCategory} defaultValue={category}>
-          {/* <SelectTrigger className="w-full">
-            <SelectValue placeholder="Select a category" />
-          </SelectTrigger> */}
-          {/* <SelectContent>
-            <SelectItem value="history">History</SelectItem>
-            <SelectItem value="science">Science</SelectItem>
-            <SelectItem value="space">Space</SelectItem>
-          </SelectContent> */}
         </Select>
         {fact && (
           <p className="mt-4 text-sm">{fact}</p>
