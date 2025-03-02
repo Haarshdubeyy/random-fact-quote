@@ -1,7 +1,7 @@
 'use server'
 
 
-const API_KEY = process.env.API_KEY
+const API_KEY = process.env.API_KEY;
 
 interface Quote {
   quote: string;
@@ -28,9 +28,9 @@ async function fetchFactFromAPI(): Promise<string> {
   }
 }
 
-async function fetchQuoteFromAPI(category: string = 'happiness'): Promise<Quote> {
+async function fetchQuoteFromAPI(): Promise<Quote> {
   try {
-    const response = await fetch(`https://api.api-ninjas.com/v1/quotes?category=${category}`, {
+    const response = await fetch(`https://api.api-ninjas.com/v1/quotes`, {
       headers: {
         'X-Api-Key': API_KEY!
       }
@@ -52,8 +52,8 @@ export async function generateFact(): Promise<string> {
   return fetchFactFromAPI()
 }
 
-export async function generateQuote(category: string = 'happiness'): Promise<Quote> {
-  return fetchQuoteFromAPI(category)
+export async function generateQuote(): Promise<Quote> {
+  return fetchQuoteFromAPI()
 }
 
 

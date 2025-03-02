@@ -3,19 +3,18 @@
 import { useState } from 'react'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { generateQuote } from '@/app/actions'
 import { Loader2 } from 'lucide-react'
 
 export default function QuoteGenerator() {
   const [quote, setQuote] = useState<{ quote: string; author: string } | null>(null)
-  const [category, setCategory] = useState<string>('happiness')
+  // const [category, setCategory] = useState<string>('happiness')
   const [isLoading, setIsLoading] = useState(false)
 
   const handleGenerateQuote = async () => {
     setIsLoading(true)
     try {
-      const newQuote = await generateQuote(category)
+      const newQuote = await generateQuote()
       setQuote(newQuote)
     } finally {
       setIsLoading(false)
@@ -39,7 +38,7 @@ export default function QuoteGenerator() {
         <CardTitle>Generate a Quote</CardTitle>
       </CardHeader>
       <CardContent>
-        <Select onValueChange={setCategory} defaultValue={category}>
+        {/* <Select onValueChange={setCategory} defaultValue={category}>
           <SelectTrigger className="w-full">
             <SelectValue placeholder="Select a category" />
           </SelectTrigger>
@@ -49,7 +48,7 @@ export default function QuoteGenerator() {
             <SelectItem value="love">Love</SelectItem>
 
           </SelectContent>
-        </Select>
+        </Select> */}
         {quote && (
           <div className="mt-4 space-y-2">
            <p className="text-sm italic">{"\"" + quote.quote + "\""}</p>
